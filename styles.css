@@ -1,0 +1,407 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+
+
+:root {
+	--ff-primary: 'Cairo', sans-serif;
+
+	--clr-background: #fdfdfd;
+	--clr-white: #ffffff;
+	--clr-black: #090e01;
+	--clr-light-green: #f3f8af;
+	--clr-medium-green: #88cc11;
+	--clr-dark-green: #456809;
+
+	--spacing: 0.25rem;
+	--transition: all 0.2s linear;
+	--dark-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+/**********************************/
+/* 1. Estilos Gerais
+/**********************************/
+
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: var(--ff-primary);
+	background-color: var(--clr-background);
+}
+a {
+	text-decoration: none;
+	color: #090e01;
+}
+
+p{
+	font-size: 1.9rem;
+	line-height: 1.8;
+	margin: 1.6%;
+	
+}
+
+h3{
+	font-size: 3.3rem;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+section{
+	min-width: 37rem;
+	padding: 1.6rem;
+}
+
+section:nth-child(even){
+	background: var(--clr-light-green);
+}
+
+
+img{
+
+	max-width: 50%;
+	height: auto;
+}
+
+.section__titulo {
+	font-size: 6.5rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding-top: 1.6rem;
+	padding-bottom: 1.6rem;
+	text-align: center;
+}
+
+.section__titulo--destaque{
+	color: var(--clr-medium-green);
+	
+}
+
+@media screen and (min-width: 1170px){
+	section{
+		padding: 1.6rem calc((100% - 117rem - 1.6rem) / 2);
+}
+
+}
+/**********************************/
+/* 2. Navbar
+/**********************************/
+.navbar {
+	position: fixed;
+	background: var(--clr-background);
+	width: 100%;
+	padding: 1.6rem;
+	box-shadow: var(--dark-shadow);
+	z-index: 3;
+}
+
+.navbar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-header__toggle {
+	background: transparent;
+	border: transparent;
+	font-size: 3.2rem;
+	color: var(--clr-medium-green);
+	cursor: pointer;
+	transition: var(--transition);
+}
+.navbar-header__toggle:hover {
+	transform: scale(1.2);
+}
+.navbar-list {
+	height: 0;
+	overflow: hidden;
+	transition: var(--transition);
+}
+.navbar-list--show-links {
+	height: 25rem;
+}
+.navbar-list__link {
+	display: block;
+	font-weight: 900;
+	font-size: 1.6rem;
+	padding: 1.6rem;
+	text-transform: capitalize;
+	color: var(--clr-black);
+	transition: var(--transition);
+}
+
+.navbar-list__link:hover {
+	background-color: var(--clr-medium-green);
+	padding-left: 3.6rem;
+}
+
+.navbar-icons {
+	display: none;
+}
+
+@media screen and (min-width: 992px) {
+	.navbar-header__toggle {
+		display: none;
+	}
+
+	.navbar-list {
+		height: auto;
+		display: flex;
+	}
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: .8rem 1.6rem;
+	}
+
+	.navbar-list__link:hover {
+		background-color: transparent;
+		padding-left: 1.6rem;
+		color: var(--clr-medium-green);
+	}
+
+	.navbar-icons {
+		display: flex;
+	}
+
+	.navbar-icons__icon {
+		margin-right: 1.6rem;
+		color: var(--clr-black);
+		font-weight: 900;
+		font-size: 1.8rem;
+		transition: var(--transition);
+	}
+
+	.navbar-icons__icon:hover {
+		color: var(--clr-medium-green);
+	}
+	
+}
+
+
+@media screen and (min-width: 1170px){
+
+	.navbar{
+		padding: .8rem calc((100% - 117rem - 1.6rem)/2);
+	}
+
+}
+/**********************************/
+/* 3. Hero
+/**********************************/
+.hero{
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center
+}
+
+.hero__video{
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+
+}
+
+.hero-texto{
+
+	min-width: 37rem;
+	padding: 1.6rem;
+
+}
+
+.hero-texto__titulo{
+
+	font-size: 5.2rem;
+	font-weight: 900;
+	color:black;
+	text-transform: uppercase;
+}
+
+.hero-texto__descricao{
+
+	font-size: 2.4rem;
+	font-weight: 600;
+	color: var(--clr-black);
+	max-width: 57rem;
+	margin: 1rem 0;
+}
+
+.hero-texto__cta{
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 00;
+	text-align: center;
+	color: black;
+	width: 27rem;
+	background: yellowgreen;
+	padding: 1.6rem;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	transition: var(--transition);
+	
+	
+}
+
+.hero-texto__cta:hover{
+	letter-spacing: .3rem;
+	
+}
+
+@media screen and (min-width: 960px) {
+	.hero-texto__titulo {
+		font-size: 7.2rem;;
+	}
+
+	.hero-texto__descricao{
+		font-size: 3.4rem;
+
+	}
+
+}
+
+@media screen and (min-widht: 1170px){
+	.hero-texto{
+		padding: 1.6rem calc((100% - 117rem)/2);
+	}
+}
+
+/**********************************/
+/* 4. Sobre Nós
+/**********************************/
+
+.sobre-texto {
+
+	margin-top: 1.6rem;
+	
+}
+
+.sobre-texto__titulo{
+	font-size: 2.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: .8rem;
+}
+
+.p{
+	font-family: var(--ff-primary);
+	margin-left: auto;
+}
+
+@media screen and (min-width: 768px){
+	.sobre-c{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.sobre-texto{
+		flex: 6 1 1rem;
+		margin-left: 1.5rem;
+	}
+
+	.sobre-c__img{
+		flex: 1 1 1rem;
+		margin-right: 1.5rem;
+	}
+}
+
+
+/**********************************/
+/* 5. Notícias (antigo diferenciais)
+/**********************************/
+.jornal{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.jornal :first-child{
+	margin-top: 1.6rem;
+}
+
+
+.section__titulo{
+	font-size: 5.4rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	align-items: center;
+	
+		
+}
+
+.section__artigos{
+	font-size: 4.5rem;
+	font-weight: 200;
+	align-items: center;
+}
+
+.jornal__descrição{
+	width: 28.8rem;
+	text-align: center;
+	
+}
+
+.jornal__titulo::before {
+	content: "\f1ea";
+	background: #090e01;
+	color: #ffffff;
+	padding: 1rem;
+	margin-right: .8rem;
+	font-family: "Font Awesome 5 free";
+	font-weight: 900;
+	font-size: 3.6rem;
+}
+
+.jornal__titulo--noticias::before{
+
+	content: "\f1ea";
+}
+
+.jornal__titulo--brasil::before{
+ content: "\f57d";
+}
+
+
+.jornal__titulo--mundo::before{
+	content: "\f0ac";
+}
+
+@media screen and (min-width:625px)
+{
+	.jornal{
+		justify-content: space-between;
+	}
+
+	.jornal + .jornal{
+		margin-top: 0;
+	}
+}
+
+/**********************************/
+/* 6. Pacotes (galeria)
+/**********************************/
+.galeria{
+	max-width: 90rem;
+	cursor: pointer;
+	display: flex;
+	flex-shrink: 0;
+	margin-left: 1.6rem;
+}
+
+
+/* 8. Galeria
+/**********************************/
+
+/**********************************/
+/* 9. Footer
+/**********************************/
+
+
